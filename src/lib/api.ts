@@ -20,12 +20,17 @@ export async function generateResearchPaper(prompt: string): Promise<string> {
     body: JSON.stringify({
       messages: [
         {
+          role: "system",
+          content:
+            "You are a research paper writing assistant. Provide detailed, well-structured academic content with proper citations and scholarly tone.",
+        },
+        {
           role: "user",
           content: prompt,
         },
       ],
       model: "deepseek-ai/DeepSeek-V3",
-      max_tokens: 512,
+      max_tokens: 8000,
       temperature: 0.1,
       top_p: 0.9,
     }),
