@@ -20,13 +20,13 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link
-              href="/features"
+              href="/#features"
               className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
             >
               Features
             </Link>
             <Link
-              href="/about"
+              href="/#about"
               className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
             >
               About
@@ -35,7 +35,12 @@ export default function Header() {
 
           {/* Auth Buttons */}
           <div className="hidden md:flex items-center">
-            <button className="px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors">
+            <button
+              className="px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+              onClick={() => {
+                window.location.href = "/ai";
+              }}
+            >
               Get Started
             </button>
           </div>

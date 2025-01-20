@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-gray-50 dark:from-background dark:to-gray-900">
@@ -16,9 +18,12 @@ export default function Home() {
               comprehensive research, zero hassle.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="px-8 py-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors font-semibold">
+              <Link
+                href="/ai"
+                className="px-8 py-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors font-semibold"
+              >
                 Try ThesisWhiz Free
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -46,7 +51,7 @@ export default function Home() {
       </main>
 
       {/* Features Section */}
-      <section className="py-24 bg-gray-50 dark:bg-gray-900">
+      <section className="py-24 bg-gray-50 dark:bg-gray-900" id="features">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -80,7 +85,7 @@ export default function Home() {
                 Intelligent Outlining
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Generate comprehensive research paper outlines in seconds with
+                Generate comprehensive research paper outlines in minutes with
                 our advanced AI system
               </p>
             </div>
@@ -134,6 +139,126 @@ export default function Home() {
                 writes and refines content
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section className="py-24 bg-white dark:bg-gray-800" id="about">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Mission Statement */}
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+              Revolutionizing Academic Research
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300">
+              At ThesisWhiz, we&apos;re committed to democratizing academic
+              writing through artificial intelligence, making high-quality
+              research accessible to everyone.
+            </p>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4 mb-16">
+            {["20k+", "95%", "24/7", "100%"].map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+                  {stat}
+                </div>
+                <div className="text-sm text-gray-600 dark:text-gray-300">
+                  {
+                    [
+                      "Papers Generated",
+                      "Satisfaction Rate",
+                      "AI Availability",
+                      "Original Content",
+                    ][index]
+                  }
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Value Propositions */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl">
+              <div className="text-blue-600 dark:text-blue-400 mb-4">
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Quality Assurance</h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                Every paper is verified for originality and academic standards
+                compliance
+              </p>
+            </div>
+
+            <div className="bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl">
+              <div className="text-blue-600 dark:text-blue-400 mb-4">
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Lightning Fast</h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                Generate comprehensive research papers in minutes, not hours or
+                days
+              </p>
+            </div>
+
+            <div className="bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl">
+              <div className="text-blue-600 dark:text-blue-400 mb-4">
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Deep Research</h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                Powered by advanced AI that understands complex academic
+                concepts
+              </p>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center">
+            <a
+              href="#"
+              className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
+            >
+              Start Your Research Journey
+            </a>
           </div>
         </div>
       </section>
